@@ -16,7 +16,14 @@ let pokemonSpriteBackShiny = document.getElementById(
 );
 let pokemonAbility = document.querySelector(".pokemon-ability");
 let pokemonId = document.querySelector(".pokemon-id");
-let pokemonStats = document.getElementById("pokemon-stats");
+
+let pokemonHp = document.querySelector(".hp-value");
+let pokemonAttack = document.querySelector(".attack-value");
+let pokemonDefense = document.querySelector(".defense-value");
+let pokemonSpecialAttack = document.querySelector(".spatk-value");
+let pokemonSpecialDefense = document.querySelector(".spdef-value");
+let pokemonSpeed = document.querySelector(".speed-value");
+
 let pokemonType = document.getElementById("pokemon-types");
 let errorDisplay = document.querySelector(".alert-danger");
 
@@ -272,32 +279,14 @@ pokemonDisplay = (value) => {
   } else {
     pokemonId.innerHTML = "#" + value.id;
   }
+
   let sumStats = 0;
-  for (let i = 0; i <= 5; i++) {
-    if ($("#" + "pokemon-stat" + i).length == 0) {
-      let stat = document.createElement("div");
-      stat.id = "pokemon-stat" + i;
-      stat.innerHTML = `${
-        value.stats[i].stat.name.charAt(0).toUpperCase() +
-        value.stats[i].stat.name.slice(1)
-      } : ${value.stats[i].base_stat}`;
-      sumStats = sumStats + value.stats[i].base_stat;
-      pokemonStats.appendChild(stat);
-    } else {
-      pokemonStats.innerHTML = "";
-      let stat = document.createElement("div");
-      stat.id = "pokemon-stat" + i;
-      stat.innerHTML = `${
-        value.stats[i].stat.name.charAt(0).toUpperCase() +
-        value.stats[i].stat.name.slice(1)
-      } : ${value.stats[i].base_stat}`;
-      sumStats = sumStats + value.stats[i].base_stat;
-      pokemonStats.appendChild(stat);
-    }
+  let statArray = [pokemonHp, pokemonAttack, pokemonDefense, pokemonSpecialAttack, pokemonSpecialDefense, pokemonSpeed]
+  for(let i=0; i<statArray.length; i++){
+    statArray[i].innerHTML = value.stats[i].base_stat;
+    sumStats = sumStats + value.stats[i].base_stat;
   }
-  let totalStat = document.createElement("div");
-  totalStat.innerHTML = `Stat total : ${sumStats}`;
-  pokemonStats.appendChild(totalStat);
+
   let arrayAbility = [];
   for (let i = 0; i < value.abilities.length; i++) {
     console.log(value.abilities[i]);

@@ -98,3 +98,7 @@ body {
     position: relative;
     bottom: 0;
 }
+
+.table{
+    text-align: left;
+}
