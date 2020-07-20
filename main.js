@@ -23,6 +23,7 @@ let pokemonDefense = document.querySelector(".defense-value");
 let pokemonSpecialAttack = document.querySelector(".spatk-value");
 let pokemonSpecialDefense = document.querySelector(".spdef-value");
 let pokemonSpeed = document.querySelector(".speed-value");
+let pokemonStatTotal = document.querySelector(".total-value")
 
 let pokemonType = document.getElementById("pokemon-types");
 let errorDisplay = document.querySelector(".alert-danger");
@@ -156,7 +157,7 @@ pokemonDisplay = (value) => {
         pokeType.style.color = "#ffffff";
         pokeType.style.padding = "0.5rem";
         pokeType.style.borderRadius = "6px";
-        pokeType.style.margin = "0 1rem";
+        pokeType.style.margin = "0 0.25rem";
         pokeType.innerHTML = `${value.types[i].type.name
           .charAt(0)
           .toUpperCase()}${value.types[i].type.name.slice(1)}`;
@@ -287,16 +288,13 @@ pokemonDisplay = (value) => {
     sumStats = sumStats + value.stats[i].base_stat;
   }
 
+  pokemonStatTotal.innerHTML = sumStats
+
   let arrayAbility = [];
   for (let i = 0; i < value.abilities.length; i++) {
     console.log(value.abilities[i]);
     let abilityName = value.abilities[i].ability.name
-    if(i===0){
-      arrayAbility.push(abilityName.charAt(0).toUpperCase()+ abilityName.slice(1));  
-    }
-    else{
       arrayAbility.push(" " + abilityName.charAt(0).toUpperCase()+ abilityName.slice(1));
-    }
     console.log(arrayAbility);
   }
   pokemonAbility.innerHTML = arrayAbility;
