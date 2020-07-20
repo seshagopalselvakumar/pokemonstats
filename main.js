@@ -22,7 +22,6 @@ let errorDisplay = document.querySelector(".alert-danger");
 
 getValue = () => {
   let urlValue = document.getElementById("pokemonName").value.toLowerCase();
-  urlValue = Number(urlValue).toString();
   console.log("urlValue", urlValue);
   let pokeUrl = `https://pokeapi.co/api/v2/pokemon/${urlValue}`;
   pokemonSpriteFrontDefault.src = "";
