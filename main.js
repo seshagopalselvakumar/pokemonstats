@@ -22,7 +22,7 @@ let errorDisplay = document.querySelector(".alert-danger");
 
 getValue = () => {
   let urlValue = document.getElementById("pokemonName").value.toLowerCase();
-  console.log("urlValue", urlValue);
+  // console.log("urlValue", urlValue);
   let pokeUrl = `https://pokeapi.co/api/v2/pokemon/${urlValue}`;
   pokemonSpriteFrontDefault.src = "";
   pokemonSpriteBackDefault.src = "";
@@ -298,11 +298,17 @@ pokemonDisplay = (value) => {
   let totalStat = document.createElement("div");
   totalStat.innerHTML = `Stat total : ${sumStats}`;
   pokemonStats.appendChild(totalStat);
-  // let arrayAbility = [];
-  // for (let i = 0; i < value.abilities.length; i++) {
-  //   console.log(value.abilities[i]);
-  //   arrayAbility.push(value.abilities[i].ability.name);
-  //   console.log(arrayAbility);
-  // }
-  // pokemonAbility.innerHTML = arrayAbility;
+  let arrayAbility = [];
+  for (let i = 0; i < value.abilities.length; i++) {
+    console.log(value.abilities[i]);
+    let abilityName = value.abilities[i].ability.name
+    if(i===0){
+      arrayAbility.push(abilityName.charAt(0).toUpperCase()+ abilityName.slice(1));  
+    }
+    else{
+      arrayAbility.push(" " + abilityName.charAt(0).toUpperCase()+ abilityName.slice(1));
+    }
+    console.log(arrayAbility);
+  }
+  pokemonAbility.innerHTML = arrayAbility;
 };
