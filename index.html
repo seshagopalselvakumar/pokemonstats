@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0" />
+    <title>Pokemon Database</title>
+    <script src="https://kit.fontawesome.com/21c50b594b.js"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous" />
+    <link rel="stylesheet"
+        href="style.css" />
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand"
+            href="#">Pokemon DB</a>
+    </nav>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <div class="input-group">
+                    <label for="pokemonNameorId">Enter the name/number of the pokemon:</label>
+                    <input type="text"
+                        class="form-control"
+                        aria-label="Large"
+                        aria-describedby="inputGroup-sizing-sm"
+                        id="pokemonName"
+                        name="pokemonName"
+                        placeholder="Enter pokemon name/id" />
+                </div>
+                <input class="btn btn-primary btn-lg"
+                    type="button"
+                    value="Submit"
+                    id="submitButton"
+                    onclick="getValue()" />
+            </div>
+        </div>
+
+        <div class="alert alert-danger"
+            role="alert">
+            The pokemon name/ID could not be found. Please enter a valid name of ID.
+        </div>
+
+        <div class="display-pokemon">
+            <div class="card">
+                <div class="card-body">
+                    <div class="display-name-id">
+                        <h3 class="pokemon-id"></h3>
+                        <h1 class="pokemon-name"></h1>
+                        <div id="pokemon-types"></div>
+                    </div>
+                    <div class="pokemon-sprite-collections">
+                        <div>
+                            <p>Normal sprites:</p>
+                            <img alt="pokemon-sprite"
+                                id="pokemon-sprite-front-default"
+                                class="pokemon-sprite" />
+                            <img alt="pokemon-sprite"
+                                id="pokemon-sprite-back-default"
+                                class="pokemon-sprite" />
+                        </div>
+                        <div>
+                            <p>Shiny sprites:</p>
+                            <img alt="pokemon-sprite"
+                                id="pokemon-sprite-front-shiny"
+                                class="pokemon-sprite" />
+                            <img alt="pokemon-sprite"
+                                id="pokemon-sprite-back-shiny"
+                                class="pokemon-sprite" />
+                        </div>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <div id="pokemon-stats-display">
+                        <h2 class="pokemon-stats-heading">Stats:</h2>
+                        <div id="pokemon-stats"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <i class="fas fa-code"></i> with <i class="fas fa-heart"></i> by
+            <a href="https://seshagopalselvakumar.github.io"
+                class="anchor-footer">Seshagopal Selvakumar</a>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+<script src="./main.js"></script>
+
+</html>

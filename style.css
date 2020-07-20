@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    text-align: center;
+}
+
+.container {
+    text-align: center;
+}
+
+.display-pokemon {
+    display: none;
+}
+
+.input-group,
+.input-group-lg {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+}
+
+.pokemon-sprite {
+    width: 10rem;
+    margin: 1rem;
+}
+
+#pokemon-sprite-front-default,
+#pokemon-sprite-back-default,
+#pokemon-sprite-front-shiny,
+#pokemon-sprite-back-shiny {
+    display: none;
+}
+
+.card {
+    margin: 2rem 0;
+}
+
+.navbar {
+    padding: 1rem;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.fa-code {
+    color: rgb(0, 211, 0);
+}
+
+.fa-heart {
+    color: rgb(207, 24, 24);
+}
+
+.anchor-footer {
+    text-decoration: none;
+    color: rgb(3, 0, 82);
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.anchor-footer:hover {
+    text-decoration: none;
+    text-shadow: 0px 0px 1px rgb(8, 8, 119);
+}
+
+.display-name-id {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#pokemon-types {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.alert-danger {
+    display: none;
+    margin: 2rem auto;
+}
+
+.error-empty {
+    display: none;
+    color: rgb(197, 39, 39);
+    font-size: 1rem;
+}
+
+.footer {
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+}
